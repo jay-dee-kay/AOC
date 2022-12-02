@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+filename = 'p1-input.txt'
+#filename = 'p1-input-easy.txt'
+
+def test():
+    expenses = []
+    with open(filename, "r") as f:
+        num = 0
+        for row in f:
+
+            expenses.append(int(row.strip()))
+            num += 1
+            
+    print(expenses)
+
+    for x in expenses:
+        for y in expenses:
+            for z in expenses:
+                if (x + y + z == 2020):
+                    print ("Found a match" + str(x) + " " + str(y)+ " " +  str(z))
+                    prod = x * y * z
+                    print ("Their product:" + str(prod))
+                    quit()
+
+if __name__ == "__main__":
+    test()
